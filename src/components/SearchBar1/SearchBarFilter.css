@@ -1,0 +1,58 @@
+
+.search-field-filter{
+    height: 75px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+  }
+  .movies-filter{
+    width: 700px;
+    height: 25px;
+  }
+  .search-btn-filter{
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    background: #f3e260;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+    
+  }
+  .search-btn-filter:hover{
+    background: #e6c60d;
+    cursor: pointer;
+  }
+  .form-box-filter{
+    background: linear-gradient(-45deg,#ee8a72,#c653a4,#9e5ed0,#5f64cc);
+    padding: 15px;
+    border: 5px;
+    background-size: 400%;
+    border-radius: 25px;
+    animation-name: borderLed-filter;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    
+    
+  }
+  
+  @keyframes borderLed-filter {
+    0% {background-position:0 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0 50%;}
+  }
+  .startDate-filter{
+    width: 150px;
+    height: 25px;
+  }
+  .endDate-filter{
+    width: 150px;
+    height: 25px;
+  }
+  .country-filter{
+    width: 200px;
+    height: 25px;
+  }
+  

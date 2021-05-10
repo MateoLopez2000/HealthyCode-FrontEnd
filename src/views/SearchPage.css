@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../src/components/MovieLabel/MoviesCollage.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .body{
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  
+  h1{
+    color: #fff;
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
