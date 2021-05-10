@@ -12,6 +12,9 @@ import Home from './components/Home';
 import Header from './components/Header';
 import UserRegister from './components/RegisterPage/User-register';
 import DetailPage from './components/DetailPage/Detail-page';
+import SearchPage from './views/SearchPage'
+import ResultPage from './views/ResultPage'
+
 function isLoggedIn() {
   return true;
 }
@@ -25,6 +28,12 @@ function App() {
         </Route>
         <Route path="/userRegistration">
           <UserRegister />
+        </Route>
+        <Route path="/SearchPage">
+          <SearchPage />
+        </Route>
+        <Route path="/ResultPage">
+          <ResultPage />
         </Route>
         <Route path="/">
           <Home />
