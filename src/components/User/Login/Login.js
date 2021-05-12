@@ -1,11 +1,14 @@
 import "./Login.css";
-import { Form, Button, Spinner } from "react-bootstrap";
-import axios from "axios";
-import { toast } from "react-toastify";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import React, { useState } from "react";
-import { size, values } from "lodash";
 import { isEmailValid } from "../../../utils/validation";
+import Last5Movies from "../../LastMovie/Last5Movies";
+
+import { Spinner } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import React, { useState } from "react";
+
+import axios from "axios";
+import { size, values } from "lodash";
 
 export default function Login(props) {
   const { setRefreshCheckLogin } = props;
@@ -37,6 +40,8 @@ export default function Login(props) {
           },
           (error) => {
             console.log(error.data);
+            setSignInLoading(false);
+
             toast.error("Error del servidor, inténtelo más tarde");
           }
         );
@@ -47,64 +52,67 @@ export default function Login(props) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-          <div class="card card-signin flex-row my-5">
-            <div class="card-img-left d-none d-md-flex"></div>
-            <div class="card-body">
-              <h5 class="card-title text-center">Login</h5>
-              <br />
-              <br />
-              <br />
-              <br />
-
-              <form class="form-signin" onSubmit={onSubmit} onChange={onChange}>
-                <div class="form-label-group">
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-control"
-                    defaultValue={formData.email}
-                  />
-                  <label for="inputEmail">Email address</label>
-                </div>
-
+    <div>
+      <div class="background">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+              <div class="card-img-left d-none d-md-flex"></div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Login</h5>
+                <br />
+                <br />
+                <br />
                 <br />
 
-                <div class="form-label-group">
-                  <input
-                    type="password"
-                    class="form-control"
-                    name="password"
-                    defaultValue={formData.password}
-                  />
-                  <label for="inputPassword">Password</label>
-                </div>
-
-                <button
-                  class="btn btn-lg text-uppercase btn-dark"
-                  type="submit"
+                <form
+                  class="form-signin"
+                  onSubmit={onSubmit}
+                  onChange={onChange}
                 >
-                  {!signInLoading ? "Login" : <Spinner animation="border" />}{" "}
-                </button>
-                <br />
-                <br />
-                <Link to="/register">
-                  <p class="text-muted font-weight-bold">
-                    Don't you have an account?{" "}
-                    <a href="#" class="text-primary ml-2">
-                      Register
-                    </a>
-                  </p>
-                </Link>
-
-                <hr class="my-4" />
-              </form>
+                  <div class="form-label-group">
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      defaultValue={formData.email}
+                    />
+                    <label for="inputEmail">Email address</label>
+                  </div>
+                  <br />
+                  <div class="form-label-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password"
+                      defaultValue={formData.password}
+                    />
+                    <label for="inputPassword">Password</label>
+                  </div>
+                  <button
+                    class="btn btn-lg text-uppercase btn-dark"
+                    type="submit"
+                  >
+                    {!signInLoading ? "Login" : <Spinner animation="border" />}{" "}
+                  </button>
+                  <br />
+                  <br />
+                  <Link to="/register">
+                    <p class="text-muted font-weight-bold">
+                      Don't you have an account?{" "}
+                      <a href="#" class="text-primary ml-2">
+                        Register
+                      </a>
+                    </p>
+                  </Link>
+                  <hr class="my-4" />
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <Last5Movies></Last5Movies>
     </div>
   );
 }

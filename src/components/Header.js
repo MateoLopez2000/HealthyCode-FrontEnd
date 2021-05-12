@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Navbar,
   Nav,
@@ -6,8 +6,8 @@ import {
   Button,
   FormControl,
   Form,
-} from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+} from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 export default function Header() {
   return (
     <Navbar expand="lg">
@@ -26,8 +26,11 @@ export default function Header() {
           <LinkContainer to="/dashboard">
             <Nav.Link href="#link">Protected</Nav.Link>
           </LinkContainer>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown title="My Account" id="basic-nav-dropdown">
+            <LinkContainer to="/login">
+              <NavDropdown.Item href="#link">Login</NavDropdown.Item>
+            </LinkContainer>{" "}
+            <NavDropdown.Item href="link">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
               Another action
             </NavDropdown.Item>
