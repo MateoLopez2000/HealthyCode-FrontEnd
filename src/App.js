@@ -13,6 +13,8 @@ import Home from './components/Home';
 import Header from './components/Header';
 import UserRegister from './components/RegisterPage/User-register';
 import DetailPage from './components/DetailPage/Detail-page';
+import SearchPage from './views/SearchPage'
+import ResultPage from './views/ResultPage'
 import { ToastContainer, toast } from 'react-toastify';
 
 function isLoggedIn() {
@@ -39,6 +41,12 @@ function App() {
       <Route path="/register">
         <Register />
       </Route>
+      <Route path="/SearchPage">
+          <SearchPage />
+        </Route>
+        <Route path="/ResultPage">
+          <ResultPage />
+        </Route>
       <ToastContainer />
     </Router>
   );
