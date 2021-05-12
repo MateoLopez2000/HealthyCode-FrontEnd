@@ -30,7 +30,7 @@ function App() {
           <DetailPage />
         </Route>
         <Route path="/userRegistration">
-          <UserRegister />
+          <Register />
         </Route>
         <Route path="/">
           <Home />
