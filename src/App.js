@@ -29,7 +29,7 @@ function App() {
           <DetailPage />
         </Route>
         <Route path="/userRegistration">
-          <Register />
+          <UserRegister />
         </Route>
         <Route path="/">
           <Home />
