@@ -7,6 +7,8 @@ import FooterLinks from "./components/FooterLinks/FooterLinks"
 import MovieLabel from "./components/MovieLabel/MovieLabel"
 
 function ResultPage() {
+  const { fromSearchPage } = this.props.location.state
+
   return (
     <body>
         <Header></Header>
@@ -17,15 +19,15 @@ function ResultPage() {
                     <h1 id="home">Popular on HealthyCode</h1>
                     <SearchBar></SearchBar>
                     <div class="box">
-                         <MovieLabel></MovieLabel>   
-                         <MovieLabel></MovieLabel> 
-                         <MovieLabel></MovieLabel> 
-                         <MovieLabel></MovieLabel> 
-                         <MovieLabel></MovieLabel> 
-                         <MovieLabel></MovieLabel> 
-                         <MovieLabel></MovieLabel> 
-                         <MovieLabel></MovieLabel> 
-                         <MovieLabel></MovieLabel>   
+                         <MovieLabel movie={fromSearchPage}></MovieLabel>   
+                         <MovieLabel movie={fromSearchPage}></MovieLabel> 
+                         <MovieLabel movie={fromSearchPage}></MovieLabel> 
+                         <MovieLabel movie={fromSearchPage}></MovieLabel> 
+                         <MovieLabel movie={fromSearchPage}></MovieLabel> 
+                         <MovieLabel movie={fromSearchPage}></MovieLabel> 
+                         <MovieLabel movie={fromSearchPage}></MovieLabel> 
+                         <MovieLabel movie={fromSearchPage}></MovieLabel> 
+                         <MovieLabel movie={fromSearchPage}></MovieLabel>   
                     </div>
                 </div>
             </section>
