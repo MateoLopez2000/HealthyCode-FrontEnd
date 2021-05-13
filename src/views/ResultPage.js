@@ -28,7 +28,7 @@ function ResultPage() {
 
 function getMovieList(MovieList) {
   return MovieList.map((movie) => {
-    return <MovieLabel movie={movie.imagen} name={movie.name}></MovieLabel>;
+    return <MovieLabel movie={movie}></MovieLabel>;
   });
 }
 
