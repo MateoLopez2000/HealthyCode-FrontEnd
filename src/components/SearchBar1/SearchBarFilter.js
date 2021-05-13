@@ -7,7 +7,7 @@ export default function SearchBarFilter(props) {
   const [formData, setFormData] = useState(initialFormValue());
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:4000/api/findmoviefiltered', formData).then(
+    axios.post('http://localhost:4000/api/movie', formData).then(
       (response) => {
         console.log(response);
         console.log('gg');
