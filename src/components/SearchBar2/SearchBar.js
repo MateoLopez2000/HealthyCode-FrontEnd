@@ -7,7 +7,7 @@ export default function SearchBar(props) {
   const [formData, setFormData] = useState(initialFormValue());
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.get('http://localhost:4000/api/movie', formData).then(
+    axios.post('http://localhost:4000/api/movie', formData).then(
       (response) => {
         console.log(response);
         console.log('gg');

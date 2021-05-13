@@ -3,7 +3,9 @@ import { isEmailValid } from '../../../utils/validation';
 import { API_HOST } from '../../../utils/constant';
 
 import { Spinner } from 'react-bootstrap';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 import { toast } from 'react-toastify';
 import React, { useState } from 'react';
 
@@ -14,6 +16,7 @@ export default function Login(props) {
   const { setRefreshCheckLogin } = props;
   const [formData, setFormData] = useState(initialFormValue());
   const [signInLoading, setSignInLoading] = useState(false);
+  const history = useHistory();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -31,13 +34,11 @@ export default function Login(props) {
         toast.warning('Email es invalido');
       } else {
         setSignInLoading(true);
-        console.log();
         const url = `${API_HOST}/api/signin `;
         axios.post(url, formData).then(
           (response) => {
             console.log(response);
-            console.log('caca');
-            <Link to="/register">Home</Link>;
+            history.push('/');
 
             toast.warning(response.message);
           },
@@ -97,10 +98,14 @@ export default function Login(props) {
                     <label for="inputPassword">Password</label>
                   </div>
                   <button
-                    className="btn btn-lg text-uppercase btn-dark"
+                    class="btn text-uppercase btn-login center-align"
                     type="submit"
                   >
-                    {!signInLoading ? 'Login' : <Spinner animation="border" />}{' '}
+                    {!signInLoading ? (
+                      'Login'
+                    ) : (
+                      <Spinner animation="border" size="sm" />
+                    )}{' '}
                   </button>
                   <br />
                   <br />
