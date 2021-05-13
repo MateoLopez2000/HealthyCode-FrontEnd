@@ -1,11 +1,9 @@
-import './SearchPage.css';
-import SearchBar from '../components/SearchBar2/SearchBar';
-import Header from '../components/Header';
+import "./SearchPage.css";
+import SearchBar from "../components/SearchBar2/SearchBar";
 
 function SearchPage() {
   return (
     <body>
-      <Header></Header>
       <div className="body">
         <form>
           <h1> Find Everything to Watch</h1>

@@ -1,17 +1,14 @@
-import { Form, Button, Spinner } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import "./Register.css";
 import { values, size } from "lodash";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 import React, { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { validCount, isEmailValid } from "../../../utils/validation";
 export default function Register(props) {
-  //SAVE FILES FOR SEND TO BACK-END
   const [formData, setFormData] = useState(initialFormValue());
-  const { setShowModal } = props;
   const [signUpLoading, setSignUpLoading] = useState(false);
 
   const onSubmit = (e) => {
@@ -137,9 +134,9 @@ export default function Register(props) {
                   <div className="text-center w-100">
                     <p className="text-muted font-weight-bold">
                       Already Registered?
-                      <label href="#" className="text-primary ml-2">
+                      <a href="login" className="text-primary ml-2">
                         Login
-                      </label>
+                      </a>
                     </p>
                   </div>
                 </Link>

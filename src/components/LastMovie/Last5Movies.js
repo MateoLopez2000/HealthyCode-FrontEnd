@@ -1,14 +1,15 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import LastMovie from './LastMovie';
-import axios from 'axios';
-import './Last5Movies.css';
-import { motion } from 'framer-motion';
-import { API_HOST } from '../../utils/constant';
+import React, { useRef, useEffect, useState } from "react";
+import "./Last5Movies.css";
+
+import LastMovie from "./LastMovie";
+import { API_HOST } from "../../utils/constant";
+
+import { Container, Row, Col } from "react-bootstrap";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import axios from "axios";
+import { motion } from "framer-motion";
 
 export default function Last5Movies(props) {
-  const { setRefreshCheckLogin } = props;
   const outerRef = useRef(null);
   const [inViewport, setInViewport] = useState(true);
 
@@ -50,9 +51,9 @@ export default function Last5Movies(props) {
       opacity: 1,
       transition: {
         duration: 0.25,
-        type: 'tween',
-        ease: 'easeIn',
-        when: 'beforeChildren',
+        type: "tween",
+        ease: "easeIn",
+        when: "beforeChildren",
         staggerChildren: 0.1,
       },
     },
@@ -67,7 +68,7 @@ export default function Last5Movies(props) {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
+        type: "spring",
       },
     },
   };
@@ -100,7 +101,7 @@ export default function Last5Movies(props) {
       <Container>
         <Row>
           {movies.map((data) => (
-            <Col xs={3} md={3} className="mb-5" key={data.id}>
+            <Col xs={3} md={3} className="mb-4" key={data.id}>
               <LastMovie data={data} />
             </Col>
           ))}

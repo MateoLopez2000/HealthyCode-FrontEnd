@@ -146,12 +146,12 @@ body {
 }
 :root {
   --input-padding-x: 1.5rem;
-  --input-padding-y: 0.75rem;
+  --input-padding-y: .75rem;
 }
 
 body {
   background: #007bff;
-  background: linear-gradient(to right, #0062e6, #33aeff);
+  background: linear-gradient(to right, #d74f97, #ee8a72);
 }
 
 .card-signin {
@@ -168,7 +168,7 @@ body {
 }
 
 .card-signin .card-img-left-login {
-  width: 100%;
+  width: 55%;
   /* Link to your background image using in the property below! */
   background: scroll center
     url('http://media.idownloadblog.com/wp-content/uploads/2016/11/watch-netflix-movies-TV-shows-offline.jpg');

@@ -5,7 +5,6 @@ import { API_HOST } from "../../../utils/constant";
 import { Spinner } from "react-bootstrap";
 import { BrowserRouter as Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-
 import { toast } from "react-toastify";
 import React, { useState } from "react";
 
@@ -13,7 +12,6 @@ import axios from "axios";
 import { size, values } from "lodash";
 
 export default function Login(props) {
-  const { setRefreshCheckLogin } = props;
   const [formData, setFormData] = useState(initialFormValue());
   const [signInLoading, setSignInLoading] = useState(false);
   const history = useHistory();
@@ -110,13 +108,14 @@ export default function Login(props) {
                   <br />
                   <br />
                   <Link to="/register">
-                    <p className="text-muted font-weight-bold">
+                    <p class="text-muted font-weight-bold">
                       Don't you have an account?{" "}
-                      <a href="#" className="text-primary ml-2">
+                      <a href="register" class="text-primary ml-2">
                         Register
                       </a>
                     </p>
                   </Link>
+
                   <hr className="my-4" />
                 </form>
               </div>
