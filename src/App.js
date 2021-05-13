@@ -1,3 +1,4 @@
+
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,14 +32,10 @@ function App() {
         <Route path="/userRegistration">
           <Register />
         </Route>
-        <Route path="/">
-          <Home />
+        <Route path="/login">
+          <Login />
         </Route>
-      </Switch>
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route path="/register">
+     <Route path="/register">
         <Register />
       </Route>
       <Route path="/SearchPage">
@@ -47,6 +44,11 @@ function App() {
         <Route path="/ResultPage">
           <ResultPage />
         </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+
       <ToastContainer />
     </Router>
   );
