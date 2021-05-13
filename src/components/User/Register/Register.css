@@ -111,3 +111,10 @@ body {
   background-color: #6e7ee0;
   color: white;
 }
+.login-color {
+  color: #777;
+}
+.center-align {
+  text-align: center;
+  background-color: #3b5998;
+}

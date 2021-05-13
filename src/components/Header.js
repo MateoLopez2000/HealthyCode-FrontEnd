@@ -1,32 +1,18 @@
-import React from 'react';
-import './Header.css';
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Button,
-  FormControl,
-  Form,
-  Container,
-} from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import React from "react";
+import "./Header.css";
+import { Navbar, Nav } from "react-bootstrap";
 export default function Header() {
   return (
-    <div className="header">
-      <h2> HealthyCode</h2>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/SearchPage">Search</a>
-        </li>
-        <div>
-          <li>
-            <a href="/Register">Register</a>
-          </li>
-        </div>
-      </ul>
-    </div>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="#home">Healthy Code</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/Register">Register</Nav.Link>
+          <Nav.Link href="/login">Login</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }

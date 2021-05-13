@@ -60,7 +60,7 @@ export default function Register(props) {
           <div className="card card-signin flex-row my-5">
             <div className="card-img-left-register d-none d-md-flex"></div>
             <div className="card-body">
-              <h5 className="card-title text-center">Register</h5>
+              <h5 className="card-title text-center login-color">Register</h5>
               <br />
               <br />
               <br />
@@ -116,7 +116,7 @@ export default function Register(props) {
                   <Button
                     variant="primary"
                     type="submit"
-                    className="btn btn-lg text-uppercase btn-dark"
+                    className="btn btn-lg text-uppercase btn-dark center-align"
                   >
                     {!signUpLoading ? (
                       "Registrarse"
