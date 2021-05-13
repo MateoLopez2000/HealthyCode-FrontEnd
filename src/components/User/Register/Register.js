@@ -1,13 +1,13 @@
-import { Form, Button, Spinner } from 'react-bootstrap';
-import './Register.css';
-import { values, size } from 'lodash';
-import { toast } from 'react-toastify';
-import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Form, Button, Spinner } from "react-bootstrap";
+import "./Register.css";
+import { values, size } from "lodash";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import React, { useState } from 'react';
-import 'react-toastify/dist/ReactToastify.css';
-import { validCount, isEmailValid } from '../../../utils/validation';
+import React, { useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import { validCount, isEmailValid } from "../../../utils/validation";
 export default function Register(props) {
   //SAVE FILES FOR SEND TO BACK-END
   const [formData, setFormData] = useState(initialFormValue());
@@ -27,17 +27,19 @@ export default function Register(props) {
     console.log(validCount);
 
     if (validCount !== 4) {
-      toast.warning('Debe llenar los formularios porfavor');
+      toast.warning("Debe llenar los formularios porfavor");
     } else {
       setSignUpLoading(true);
-      axios.post('http://localhost:4000/api/user', formData).then(
+      axios.post("http://localhost:4000/api/user", formData).then(
         (response) => {
           console.log(response);
-          toast.warning('Registrado correctamente');
+          toast.warning("Registrado correctamente");
         },
         (error) => {
           console.log(error.data);
-          toast.error('Error del servidor, inténtelo más tarde');
+          setSignUpLoading(false);
+
+          toast.error("Error del servidor, inténtelo más tarde");
         }
       );
       //   }
@@ -113,7 +115,7 @@ export default function Register(props) {
                     className="btn btn-lg text-uppercase btn-dark"
                   >
                     {!signUpLoading ? (
-                      'Registrarse'
+                      "Registrarse"
                     ) : (
                       <Spinner animation="border" />
                     )}
@@ -147,9 +149,9 @@ export default function Register(props) {
 }
 function initialFormValue() {
   return {
-    name: '',
-    lastName: '',
-    email: '',
-    password: '',
+    name: "",
+    lastName: "",
+    email: "",
+    password: "",
   };
 }
