@@ -11,7 +11,7 @@ export default function LastMovie({ data }) {
         <p class="card-text name">{data.descripcion}</p>
         <p class="card-text">
           <small class="text-muted date">
-            Last updated {moment(data.fecha).calendar()}
+            Last updated {moment(data.fecha, "YYYYMMDD").fromNow()}
           </small>
         </p>
       </div>
