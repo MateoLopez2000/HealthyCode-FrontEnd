@@ -46,7 +46,7 @@ export default function DetailPage() {
         />
         <Card.Body>
           <Card.Title>Shrek Tercero</Card.Title>
-          <Card.Text>
+          <Card.Text class="custom-text">
             Shrek es un personaje creado por el escritor estadounidense William
             Steig y adaptado por Dreamworks Animation. Él es el personaje
             principal del libro y la película del mismo nombre, que dio inicio a

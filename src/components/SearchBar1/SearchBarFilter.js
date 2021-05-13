@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './SearchBarFilter.css';
 export default function SearchBarFilter(props) {
   const [formData, setFormData] = useState(initialFormValue());
-  const onSubmit = (e) => {
+  const history = useHistory();
+
+  function routeVideoDetail() {
+    history.push({
+      pathname: '/detailPage',
+    });
+  }
+  /*   const onSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:4000/api/movie', formData).then(
       (response) => {
@@ -26,14 +33,14 @@ export default function SearchBarFilter(props) {
         toast.error('Error del servidor, inténtelo más tarde');
       }
     );
-  };
+  }; */
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
     <div className="form-box-filter">
-      <form className="form-signin" onSubmit={onSubmit} onChange={onChange}>
+      <form className="form-signin" onChange={onChange}>
         <input
           type="text"
           className="search-field-filter movies-filter"
@@ -56,7 +63,11 @@ export default function SearchBarFilter(props) {
           placeholder="Country"
           defaultValue={formData.country}
         />
-        <button className="search-btn-filter" type="submit">
+        <button
+          className="search-btn-filter"
+          type="submit"
+          onClick={routeVideoDetail}
+        >
           Search
         </button>
       </form>

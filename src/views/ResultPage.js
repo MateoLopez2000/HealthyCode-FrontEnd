@@ -23,6 +23,7 @@ function ResultPage() {
       (response) => {
         console.log('este es tu response ' + response);
         toast.warning(response.message);
+        setVideo(response);
       },
       (error) => {
         console.log(error.data);
@@ -40,6 +41,7 @@ function ResultPage() {
           <div className="location" id="home">
             <h1 id="home">Popular on HealthyCode</h1>
             <SearchBar></SearchBar>
+            {/*             <MovieLabel movie={videoData}></MovieLabel> */}
           </div>
         </section>
         <FooterLinks></FooterLinks>

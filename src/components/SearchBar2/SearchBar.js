@@ -24,11 +24,7 @@ export default function SearchBar({ data }) {
         className="search-field movies"
         placeholder="What are we looking for?"
       />
-      <button
-        className="search-btn"
-        type="submit"
-        onClick={() => routeVideoDetail()}
-      >
+      <button className="search-btn" type="submit" onClick={routeVideoDetail}>
         Search
       </button>
     </div>
