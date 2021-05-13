@@ -31,12 +31,14 @@ export default function Login(props) {
         toast.warning("Email es invalido");
       } else {
         setSignInLoading(true);
+        console.log();
         axios.post("http://localhost:4000/api/signin", formData).then(
           (response) => {
             console.log(response);
             console.log("caca");
-            toast.warning(response.message);
             <Link to="/register">Home</Link>;
+
+            toast.warning(response.message);
           },
           (error) => {
             console.log(error.data);
