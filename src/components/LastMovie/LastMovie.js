@@ -1,15 +1,20 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import moment from "moment";
+import "./LastMovie.css";
 
 export default function LastMovie({ data }) {
   return (
-    <Card className="bg-dark text-white">
-      <Card.Img src={data.image} alt="Card image" />
-      <Card.ImgOverlay>
-        <Card.Title>{data.name}</Card.Title>
-        <Card.Text>{data.desc}</Card.Text>
-        <Card.Text>Last updated 3 mins ago</Card.Text>
-      </Card.ImgOverlay>
-    </Card>
+    <div class="card ">
+      <img src={data.imagen} class="img-fluid card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title name">{data.name}</h5>
+        <p class="card-text name">{data.descripcion}</p>
+        <p class="card-text">
+          <small class="text-muted date">
+            Last updated {moment(data.fecha, "YYYYMMDD").fromNow()}
+          </small>
+        </p>
+      </div>
+    </div>
   );
 }

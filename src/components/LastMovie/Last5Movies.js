@@ -1,43 +1,106 @@
-import { useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import LastMovie from "./LastMovie";
 import axios from "axios";
-const data = {
-  title: "prueba1",
-  desc: "test1",
-};
+import "./Last5Movies.css";
+import { motion } from "framer-motion";
+import { API_HOST } from "../../utils/constant";
+
 export default function Last5Movies(props) {
   const { setRefreshCheckLogin } = props;
+  const outerRef = useRef(null);
+  const [inViewport, setInViewport] = useState(true);
 
   useEffect(() => {
     const getMoviesAxios = async () => {
       try {
-        const { data } = await axios.get(
-          "https://mocki.io/v1/1c68ed2c-eb6c-4ce9-85a8-2890183e46fc"
-        );
+        const url = `${API_HOST}/api/movie `;
+
+        const { data } = await axios.get(url);
         console.log(data);
         setMovies(data);
       } catch (err) {
-        console.err(err);
+        console.log(err);
       }
     };
     getMoviesAxios().catch(null);
   }, []);
 
+  useEffect(() => {
+    const onChange = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === outerRef.current) {
+          if (entry.isIntersecting) {
+            setInViewport(true);
+          } else {
+            setInViewport(false);
+          }
+        }
+      });
+    };
+    const observer = new IntersectionObserver(onChange, { threshold: 0.5 });
+    observer.observe(outerRef.current);
+  }, [outerRef]);
+  const fadeInContainerWithStagger = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.25,
+        type: "tween",
+        ease: "easeIn",
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const fadeInUp = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+      },
+    },
+  };
   const [movies, setMovies] = useState([]);
   return (
     <div className="App">
       <Jumbotron fluid>
-        <Container>
-          <h1> Películas y series ilimitadas y mucho más.</h1>
-          <p>Disfruta donde quieras. Cancela cuando quieras.</p>
+        <Container ref={outerRef} id="outer-box">
+          {inViewport && (
+            <motion.div
+              variants={fadeInContainerWithStagger}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div variants={fadeInUp}>
+                <h1 class="title">
+                  Películas y series ilimitadas y mucho más.
+                </h1>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <p class="description">
+                  Disfruta donde quieras. Cancela cuando quieras.
+                </p>
+              </motion.div>
+            </motion.div>
+          )}
         </Container>
       </Jumbotron>
       <Container>
         <Row>
           {movies.map((data) => (
-            <Col xs={4} md={3} className="mb-5" key={data.id}>
+            <Col xs={3} md={3} className="mb-5" key={data.id}>
               <LastMovie data={data} />
             </Col>
           ))}

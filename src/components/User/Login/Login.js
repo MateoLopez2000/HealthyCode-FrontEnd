@@ -1,6 +1,6 @@
 import "./Login.css";
 import { isEmailValid } from "../../../utils/validation";
-import Last5Movies from "../../LastMovie/Last5Movies";
+import { API_HOST } from "../../../utils/constant";
 
 import { Spinner } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -31,12 +31,15 @@ export default function Login(props) {
         toast.warning("Email es invalido");
       } else {
         setSignInLoading(true);
-        axios.post("http://localhost:4000/api/signin", formData).then(
+        console.log();
+        const url = `${API_HOST}/api/signin `;
+        axios.post(url, formData).then(
           (response) => {
             console.log(response);
             console.log("caca");
-            toast.warning(response.message);
             <Link to="/register">Home</Link>;
+
+            toast.warning(response.message);
           },
           (error) => {
             console.log(error.data);
@@ -112,7 +115,6 @@ export default function Login(props) {
           </div>
         </div>
       </div>
-      <Last5Movies></Last5Movies>
     </div>
   );
 }
