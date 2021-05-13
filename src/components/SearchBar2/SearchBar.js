@@ -7,7 +7,7 @@ export default function SearchBar(props) {
   const [formData, setFormData] = useState(initialFormValue());
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:4000/api/findmovie', formData).then(
+    axios.get('http://localhost:4000/api/movie', formData).then(
       (response) => {
         console.log(response);
         console.log('gg');
@@ -32,15 +32,15 @@ export default function SearchBar(props) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
-    <div class="form-box">
-      <form class="form-signin" onSubmit={onSubmit} onChange={onChange}>
+    <div className="form-box">
+      <form className="form-signin" onSubmit={onSubmit} onChange={onChange}>
         <input
           type="text"
-          class="search-field movies"
+          className="search-field movies"
           placeholder="What are we looking for?"
           defaultValue={formData.name}
         />
-        <button class="search-btn" type="submit">
+        <button className="search-btn" type="submit">
           Search
         </button>
       </form>

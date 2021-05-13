@@ -1,12 +1,11 @@
-
 :root {
   --input-padding-x: 1.5rem;
-  --input-padding-y: .75rem;
+  --input-padding-y: 0.75rem;
 }
 
 body {
-        background: #ee8a72;
-        background: linear-gradient(to right, #d74f97, #ee8a72);
+  background: #ee8a72;
+  background: linear-gradient(to right, #d74f97, #ee8a72);
 }
 
 .card-signin {
@@ -22,10 +21,11 @@ body {
   font-size: 1.5rem;
 }
 
-.card-signin .card-img-left {
+.card-signin .card-img-left-register {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url('https://st2.depositphotos.com/1022135/6219/i/600/depositphotos_62194893-stock-photo-young-woman-watching-tv.jpg');
+  background: scroll center
+    url('https://pixfeeds.com/images/entertainment/1280-155097108-watching-tv-program.jpg');
   background-size: cover;
 }
 
@@ -40,7 +40,7 @@ body {
 .form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
@@ -56,12 +56,12 @@ body {
   border-radius: 2rem;
 }
 
-.form-label-group>input,
-.form-label-group>label {
+.form-label-group > input,
+.form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group>label {
+.form-label-group > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -72,8 +72,8 @@ body {
   line-height: 1.5;
   color: #495057;
   border: 1px solid transparent;
-  border-radius: .25rem;
-  transition: all .1s ease-in-out;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .form-label-group input::-webkit-input-placeholder {
@@ -101,13 +101,13 @@ body {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-label-group input:not(:placeholder-shown) ~ label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
   color: #777;
 }
-.btn-dark{
-  background-color:#6e7ee0;
-  color:white;
-  }
+.btn-dark {
+  background-color: #6e7ee0;
+  color: white;
+}

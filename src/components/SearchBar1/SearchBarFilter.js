@@ -32,31 +32,31 @@ export default function SearchBarFilter(props) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
-    <div class="form-box-filter">
-      <form class="form-signin" onSubmit={onSubmit} onChange={onChange}>
+    <div className="form-box-filter">
+      <form className="form-signin" onSubmit={onSubmit} onChange={onChange}>
         <input
           type="text"
-          class="search-field-filter movies-filter"
+          className="search-field-filter movies-filter"
           placeholder="What are we looking for?"
           defaultValue={formData.name}
         />
         <input
           type="date"
-          class="search-field-filter startDate-filter"
+          className="search-field-filter startDate-filter"
           defaultValue={formData.stardate}
         />
         <input
           type="date"
-          class="search-field-filter endDate-filter"
+          className="search-field-filter endDate-filter"
           defaultValue={formData.enddate}
         />
         <input
           type="text"
-          class="search-field-filter country-filter"
+          className="search-field-filter country-filter"
           placeholder="Country"
           defaultValue={formData.country}
         />
-        <button class="search-btn-filter" type="submit">
+        <button className="search-btn-filter" type="submit">
           Search
         </button>
       </form>

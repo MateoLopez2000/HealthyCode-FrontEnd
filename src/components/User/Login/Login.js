@@ -1,14 +1,14 @@
-import "./Login.css";
-import { isEmailValid } from "../../../utils/validation";
-import { API_HOST } from "../../../utils/constant";
+import './Login.css';
+import { isEmailValid } from '../../../utils/validation';
+import { API_HOST } from '../../../utils/constant';
 
-import { Spinner } from "react-bootstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import React, { useState } from "react";
+import { Spinner } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import React, { useState } from 'react';
 
-import axios from "axios";
-import { size, values } from "lodash";
+import axios from 'axios';
+import { size, values } from 'lodash';
 
 export default function Login(props) {
   const { setRefreshCheckLogin } = props;
@@ -25,10 +25,10 @@ export default function Login(props) {
     });
 
     if (size(formData) !== validCount) {
-      toast.warning("Completa todo los campos del formulario");
+      toast.warning('Completa todo los campos del formulario');
     } else {
       if (!isEmailValid(formData.email)) {
-        toast.warning("Email es invalido");
+        toast.warning('Email es invalido');
       } else {
         setSignInLoading(true);
         console.log();
@@ -36,7 +36,7 @@ export default function Login(props) {
         axios.post(url, formData).then(
           (response) => {
             console.log(response);
-            console.log("caca");
+            console.log('caca');
             <Link to="/register">Home</Link>;
 
             toast.warning(response.message);
@@ -45,7 +45,7 @@ export default function Login(props) {
             console.log(error.data);
             setSignInLoading(false);
 
-            toast.error("Error del servidor, inténtelo más tarde");
+            toast.error('Error del servidor, inténtelo más tarde');
           }
         );
       }
@@ -56,59 +56,63 @@ export default function Login(props) {
   };
   return (
     <div>
-      <div class="background">
-        <div class="row">
-          <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="card card-signin flex-row my-5">
-              <div class="card-img-left d-none d-md-flex"></div>
-              <div class="card-body">
-                <h5 class="card-title text-center">Login</h5>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="background">
+        <div className="row">
+          <div className="col-lg-10 col-xl-9 mx-auto">
+            <div className="card card-signin flex-row my-5">
+              <div className="card-img-left-login d-none d-md-flex"></div>
+              <div className="card-body">
+                <h5 className="card-title text-center">Login</h5>
                 <br />
                 <br />
                 <br />
                 <br />
 
                 <form
-                  class="form-signin"
+                  className="form-signin"
                   onSubmit={onSubmit}
                   onChange={onChange}
                 >
-                  <div class="form-label-group">
+                  <div className="form-label-group">
                     <input
                       type="email"
                       name="email"
-                      class="form-control"
+                      className="form-control"
                       defaultValue={formData.email}
                     />
                     <label for="inputEmail">Email address</label>
                   </div>
                   <br />
-                  <div class="form-label-group">
+                  <div className="form-label-group">
                     <input
                       type="password"
-                      class="form-control"
+                      className="form-control"
                       name="password"
                       defaultValue={formData.password}
                     />
                     <label for="inputPassword">Password</label>
                   </div>
                   <button
-                    class="btn btn-lg text-uppercase btn-dark"
+                    className="btn btn-lg text-uppercase btn-dark"
                     type="submit"
                   >
-                    {!signInLoading ? "Login" : <Spinner animation="border" />}{" "}
+                    {!signInLoading ? 'Login' : <Spinner animation="border" />}{' '}
                   </button>
                   <br />
                   <br />
                   <Link to="/register">
-                    <p class="text-muted font-weight-bold">
-                      Don't you have an account?{" "}
-                      <a href="#" class="text-primary ml-2">
+                    <p className="text-muted font-weight-bold">
+                      Don't you have an account?{' '}
+                      <a href="#" className="text-primary ml-2">
                         Register
                       </a>
                     </p>
                   </Link>
-                  <hr class="my-4" />
+                  <hr className="my-4" />
                 </form>
               </div>
             </div>
@@ -120,7 +124,7 @@ export default function Login(props) {
 }
 function initialFormValue() {
   return {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   };
 }

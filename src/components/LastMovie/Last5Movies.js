@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import LastMovie from "./LastMovie";
-import axios from "axios";
-import "./Last5Movies.css";
-import { motion } from "framer-motion";
-import { API_HOST } from "../../utils/constant";
+import React, { useRef, useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import LastMovie from './LastMovie';
+import axios from 'axios';
+import './Last5Movies.css';
+import { motion } from 'framer-motion';
+import { API_HOST } from '../../utils/constant';
 
 export default function Last5Movies(props) {
   const { setRefreshCheckLogin } = props;
@@ -50,9 +50,9 @@ export default function Last5Movies(props) {
       opacity: 1,
       transition: {
         duration: 0.25,
-        type: "tween",
-        ease: "easeIn",
-        when: "beforeChildren",
+        type: 'tween',
+        ease: 'easeIn',
+        when: 'beforeChildren',
         staggerChildren: 0.1,
       },
     },
@@ -67,7 +67,7 @@ export default function Last5Movies(props) {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
       },
     },
   };
@@ -83,13 +83,13 @@ export default function Last5Movies(props) {
               animate="visible"
             >
               <motion.div variants={fadeInUp}>
-                <h1 class="title">
+                <h1 className="title">
                   Películas y series ilimitadas y mucho más.
                 </h1>
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <p class="description">
+                <p className="description">
                   Disfruta donde quieras. Cancela cuando quieras.
                 </p>
               </motion.div>

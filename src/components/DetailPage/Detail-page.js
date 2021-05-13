@@ -1,22 +1,28 @@
 import React from 'react';
+import './Detail-page.css';
 import { Card, Button } from 'react-bootstrap';
-
 export default function DetailPage() {
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <br />
+      <br />
+      <br />
+      <br />
+      <Card className="text-center">
+        <Card.Header>Card Header title Goes Here</Card.Header>
         <Card.Img
           variant="top"
-          src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg"
+          src="https://indiehoy.com/wp-content/uploads/2020/01/shrek.jpg"
+          class="card-img-top img-fluid"
         />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Card.Title>Card Title Goes Here</Card.Title>
+          <Card.Text>Some Card body content goes here</Card.Text>
+          <Button variant="primary">Primary Button</Button>
         </Card.Body>
+        <Card.Footer className="text-muted">
+          Card footer title Goes Here
+        </Card.Footer>
       </Card>
     </div>
   );
