@@ -1,0 +1,26 @@
+.title{
+    color:black;
+}
+.description{
+    color:#6e7ee0;
+}
+body {
+  font-family: sans-serif;
+}
+
+#outer-box {
+  color: white;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 24px 32px;
+}
+
+#previous-content {
+  height: 150vh;
+  background: lightgrey;
+  margin-bottom: 8px;
+  padding: 24px;
+  text-align: center;
+}

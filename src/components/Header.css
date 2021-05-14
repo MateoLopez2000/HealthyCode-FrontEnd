@@ -1,0 +1,33 @@
+.header {
+  height: 100px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+h2 {
+  color: rgba(139, 133, 133, 0.959);
+  font-size: 20px;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  width: 100%;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  left: 70%;
+  top: 50px;
+}
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  display: inline-block;
+  color: rgba(189, 189, 189, 0.959);
+  font-size: 20px;
+  margin-right: 70px;
+  text-decoration: none;
+}
