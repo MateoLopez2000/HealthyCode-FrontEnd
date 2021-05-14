@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Healthy code
+This is a video watcher app, which principal functionallity is show some movies stored in a database, this is the final proyect of **¨CERTIFICATION 3**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
